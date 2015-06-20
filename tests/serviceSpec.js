@@ -24,6 +24,7 @@ describe('mocking service', function(){
 
     beforeEach(inject(function(util){
         mockedUtilSvc=util;
+        //module('served/data.json');
     }));
 
     it('should have mocked utilSvc', function(){
@@ -32,5 +33,12 @@ describe('mocking service', function(){
 
         expect(mockedUtilSvc.isDate).not.toBe(undefined);
         expect(mockedUtilSvc.isDate.calls).not.toBe(undefined);
+
+        var testFixture = {prop: 'val'};
+        //inject(function (_servedData_) {
+        //    testFixture = _servedData_;
+        //});
+
+        expect(testFixture).toEqual({prop: 'val'});
     });
 });
